@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Fredoka+One);
+@import url(http://fonts.googleapis.com/css?family=Creepster);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:900|PT+Mono|Averia+Sans+Libre:400,700);
+body{
+	padding:0;
+	margin:0;
+}
+@keyframes tripy {
+  0% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #0595f8, 10px 10px 0 #ffd05c, 14px 14px 0 #df2818, 18px 18px 0 #0595f8, 22px 22px 0 #ffd05c;
+  }
+  33% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #ffd05c, 10px 10px 0 #df2818, 14px 14px 0 #0595f8, 18px 18px 0 #ffd05c, 22px 22px 0 #df2818;
+  }
+  66% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #df2818, 10px 10px 0 #0595f8, 14px 14px 0 #ffd05c, 18px 18px 0 #df2818, 22px 22px 0 #0595f8;
+  }
+  100% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #0595f8, 10px 10px 0 #ffd05c, 14px 14px 0 #df2818, 18px 18px 0 #0595f8, 22px 22px 0 #ffd05c;
+  }
+}
+@-webkit-keyframes tripy {
+  0% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #0595f8, 10px 10px 0 #ffd05c, 14px 14px 0 #df2818, 18px 18px 0 #0595f8, 22px 22px 0 #ffd05c;
+  }
+  33% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #ffd05c, 10px 10px 0 #df2818, 14px 14px 0 #0595f8, 18px 18px 0 #ffd05c, 22px 22px 0 #df2818;
+  }
+  66% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #df2818, 10px 10px 0 #0595f8, 14px 14px 0 #ffd05c, 18px 18px 0 #df2818, 22px 22px 0 #0595f8;
+  }
+  100% {
+    color: black;
+    text-shadow: -2px -2px 0 cornsilk, 2px -2px 0 cornsilk, -2px 2px 0 cornsilk, 2px 2px 0 cornsilk, 6px 6px 0 #0595f8, 10px 10px 0 #ffd05c, 14px 14px 0 #df2818, 18px 18px 0 #0595f8;
+  }
+}
+.array{
+	border-radius:50px;
+	width:30px;
+	height:30px;
+	background-color: #0595f8;
+	float:left;
+}
+.reset{
+	border-radius:50px;
+	width:30px;
+	height:30px;
+	background-color: #df2818;
+	float:right;
+}
+.lk{
+	height:100vh;
+	width:100vw;
+	background-color: rgba(0,0,0,0);
+}
+
+.visual .lk h4{
+	font-family: 'Creepster';
+	color:purple;
+	letter-spacing: 0.3em;
+	text-shadow: 2px 2px aquamarine;
+}
+
+canvas {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index: -1;
+}
+
+
+.og{
+	height:100vh;
+	width:100vw;
+	background-color: cornsilk;
+}
+.og h4{
+	color:black;
+	letter-spacing: 0.2em;
+	/*font-family: 'Fredoka One', sans-serif;*/
+	font-family: 'Averia Sans Libre', cursive;
+	-webkit-animation: tripy .33s infinite;
+}
+.og span:nth-child(2){
+	height:4px;
+
+	z-index: 3;
+
+
+}
+.og span:nth-child(1){
+
+	background-color: #df2818;
+	border-radius:50px;
+	z-index: 0;
+
+}
+.og span:nth-child(4){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 40px 80px 40px;
+	background-color: rgba(0,0,0,0);
+	border-color: transparent transparent #0595f8 transparent;
+	z-index: 2;
+}
+.og span:nth-child(5){
+	width: 100px;
+	height: 50px;
+	-webkit-transform: skew(20deg);
+   	-moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+	background: #df2818;
+	z-index: 1;
+}
+.og span:nth-child(8){
+	width: 100px;
+	height: 50px;
+	-webkit-transform: skew(20deg);
+   	-moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+	background: #df2818;
+	z-index: 1;
+}
+.og span:nth-child(10){
+
+	background-color: #df2818;
+	border-radius:50px;
+	z-index: 0;
+
+}
+.og span:nth-child(9){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 40px 80px 40px;
+	background-color: rgba(0,0,0,0);
+	border-color: transparent transparent #0595f8 transparent;
+	z-index: 2;
+}
+.og span:nth-child(15){
+	width: 4px;
+}
+.og span:nth-child(16){
+	height: 4px;
+}
+.og span:nth-child(12){
+	width:4px;
+}
+.og span:nth-child(13){
+	height:4px;
+}
+.og span:nth-child(14){
+	width: 100px;
+	height: 50px;
+	-webkit-transform: skew(20deg);
+   	-moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+	background: #ffd05c;
+	z-index: 1;
+}
+.og span:nth-child(6){
+	/*	height:0;*/
+	border:50px;
+	background-color: #ffd05c;
+	z-index: 0;
+}
+
+.og span{
+	height:50px;
+	display: block;
+	position: fixed;
+	background:rgba(0,0,0,0);
+	width:50px;
+/*	background-color: black;*/
+	margin-top:100px;
+}
+.og span:nth-child(7){
+	width:4px;
+}
+
+.bf{
+	height:100vh;
+	width:100vw;
+	background-color: rgba(0,0,0,0);
+	font-family: 'Fredoka One', sans-serif;
+}
+.dg{
+	height:100vh;
+	width:100vw;
+	background-color: rgba(0,0,0,0);
+	background-image: url('assets/phone1.png');
+
+}
+.dg h4{
+	color: blue;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 2px deeppink !important;
+    letter-spacing: .2em;
+    padding-top: 35px;
+}
+.visual div{
+	max-height: 0;
+	opacity: 0;
+	position: absolute;
+	transition: opacity .5s;
+	-webkit-transition: opacity .5s;
+	-moz-transition: opacity .5s;
+	-ms-transition: opacity .5s;
+	-o-transition: opacity .5s;
+	overflow: hidden;
+}
+.visual div h4{
+	font-size: 85px;
+/*	font-family: 'helvetica', sans-serif;*/
+	text-transform: uppercase;
+	text-shadow: 1px 1px #ff0000;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	line-height: 200%;
+	transition:1s;
+	-webkit-transition:1s;
+	-ms-transition:1s;
+	-moz-transition:1s;
+	-o-transition:1s;
+
+}
