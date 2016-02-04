@@ -32,6 +32,42 @@ body{
     color:#AC92EC;
   }
 }
+@keyframes bg{
+  0%{
+    background-image:url('assets/grid.png');
+  }
+  
+  20%{
+    background-image:url('assets/grid7.png');
+  }
+  
+  60%{
+    background-image:url('assets/grid8.png');
+  }
+  
+  100%{
+    background-image:url('assets/grid.png');
+  }
+
+}
+@-webkit-keyframes bg{
+  0%{
+    background-image:url('assets/grid.png');
+  }
+  
+  20%{
+    background-image:url('assets/grid7.png');
+  }
+  
+  60%{
+    background-image:url('assets/grid8.png');
+  }
+  
+  100%{
+    background-image:url('assets/grid.png');
+  }
+
+}
 
 @-moz-keyframes Color{
   0%{
@@ -402,8 +438,25 @@ canvas {
 .bf{
 	height:100vh;
 	width:100vw;
+  letter-spacing: 0.3em;
 	background-color: rgba(0,0,0,0);
-	font-family: 'Fredoka One', sans-serif;
+/*  background-image: url('assets/1.png');*/
+	font-family: 'Fredoka', sans-serif;
+
+  background-size: 100%;
+  background-position:50% 50%;
+}
+.bf h4{
+  position: fixed !important;
+  top:25%;
+  text-shadow:
+    3px 3px 0 #fff,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+   -1px  1px 0 #fff,
+    1px  1px 0 #fff !important;
 }
 
 .dg{
@@ -432,13 +485,13 @@ canvas {
 .round1,.round2,.round3,.round4,.round5{
   height:100vh;
   width:100vw;
-  background-color: red;
+  background-color: black;
   color:black;
   font-size: 3em;
 }
 
 
-.visual div{
+.visual>div{
 	max-height: 0;
 	opacity: 0;
 	position: absolute;
@@ -453,7 +506,7 @@ canvas {
 	font-size: 85px;
 /*	font-family: 'helvetica', sans-serif;*/
 	text-transform: uppercase;
-	text-shadow: 1px 1px #ff0000;
+	text-shadow: 1px 1px #fff;
 	text-align: center;
 	position: relative;
 	z-index: 2;
@@ -465,4 +518,27 @@ canvas {
 	-moz-transition:1s;
 	-o-transition:1s;
 
+}
+
+
+svg path {
+    stroke: #fff;
+    fill:none;
+    stroke-width: 1;
+    stroke-dasharray: 300px;
+    stroke-dashoffset: 300px;
+    animation-name: draw;
+    animation-duration: 10s;
+    
+    animation-iteration-count: infinite; // Run only once
+    animation-timing-function: linear;
+  }
+
+svg{
+  width:100%;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

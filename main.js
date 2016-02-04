@@ -1,5 +1,10 @@
 
-
+var audio = new Audio('assets/Powerup12.wav');
+var audio2 = new Audio('assets/Powerup13.wav');
+var audio3 = new Audio('assets/Powerup19.wav');
+var audio4 = new Audio('assets/Powerup21.wav');
+var audio5 = new Audio('assets/Powerup23.wav');
+var audioArray = [audio, audio2, audio3, audio4, audio5];
 //basically we are grabbing all the elements one by one randomly from one array, storing them in a temp array and then setting that array equal to the original.
 var state = 'clean';
 var round = 0;
@@ -7,7 +12,7 @@ var rounds = [1,2,3,4,5]
 function serve(arr, index){
 	if(arr[index] == 'Oh Golly'){
 	   $('canvas').remove()
-	   $('.visual div').css('max-height','0').css('opacity','0');
+	   $('.visual>div').css('max-height','0').css('opacity','0');
 	   $('.og').css('max-height','1200px').css('opacity','1');
 	   $('.og h4').css('text-shadow','5px 5px #ff0000;').css('transform','translateY(55%)')
 	   var arrOfSpans = $('.og span');
@@ -18,38 +23,40 @@ function serve(arr, index){
 	} else if(arr[index] == 'Lily Konigsberg'){
 	    $('canvas').remove()
 		$('.og h4').css('text-shadow','5px 5px #ff0000;').css('transform','translateY(0%)')
-		$('.visual div').css('max-height','0').css('opacity','0');
+		$('.visual>div').css('max-height','0').css('opacity','0');
 		 $('.lk').css('max-height','1200px').css('opacity','1');
 		} else if(arr[index] == 'Love Spread'){
 			$('canvas').remove()
 			lily();
       $('canvas').css('opacity', 1);
 			$('.og h4').css('text-shadow','5px 5px #ff0000;').css('transform','translateY(0%)')
-			$('.visual div').css('max-height','0').css('opacity','0');
+			$('.visual>div').css('max-height','0').css('opacity','0');
 			$('.dg').css('max-height','1200px').css('opacity','1');
 			} else if(arr[index] == 'Big Figment'){
 				$('canvas').remove()
+        bigFig();
+        $('canvas').css('opacity', 1);
 				$('.og h4').css('text-shadow','5px 5px #ff0000;').css('transform','translateY(0%)')
-				$('.visual div').css('max-height','0').css('opacity','0');
+				$('.visual>div').css('max-height','0').css('opacity','0');
 				$('.bf').css('max-height','1200px').css('opacity','1');
 			} else if (arr[index] == 1){
-        $('.visual div').css('max-height','0').css('opacity','0');
+        $('.visual>div').css('max-height','0').css('opacity','0');
         $('canvas').remove();
         $('.round1').css('max-height','1200px').css('opacity','1');
       } else if (arr[index] == 2){
-        $('.visual div').css('max-height','0').css('opacity','0');
+        $('.visual>div').css('max-height','0').css('opacity','0');
         $('canvas').remove();
         $('.round2').css('max-height','1200px').css('opacity','1');
       } else if (arr[index] == 3){
-        $('.visual div').css('max-height','0').css('opacity','0');
+        $('.visual>div').css('max-height','0').css('opacity','0');
         $('canvas').remove();
         $('.round3').css('max-height','1200px').css('opacity','1');
       } else if (arr[index] == 4){
-        $('.visual div').css('max-height','0').css('opacity','0');
+        $('.visual>div').css('max-height','0').css('opacity','0');
         $('canvas').remove();
         $('.round4').css('max-height','1200px').css('opacity','1');
       } else if (arr[index] == 5){
-        $('.visual div').css('max-height','0').css('opacity','0');
+        $('.visual>div').css('max-height','0').css('opacity','0');
         $('canvas').remove();
         $('.round5').css('max-height','1200px').css('opacity','1');
       }
@@ -139,8 +146,11 @@ function serve(arr, index){
 
 	    $('body').keyup(function(e){
 		   if(e.keyCode == 32){
+        var item = audioArray[Math.floor(Math.random()*audioArray.length)];
+        item.play();
 		       // user has pressed space
 		      shuff(arr)
+
 	        $('#array').text(arr.join(', '));
 		   } else if(e.keyCode == 82){
 			   	reset(arr);
@@ -281,7 +291,7 @@ c.drawImage(imageObj, this.x, this.y, 100,100);
       var aaratiisqueen = 1;
 
       var myInterval = setInterval(function(){
-        if(aaratiisqueen > 1500){
+        if(aaratiisqueen > 1500000){
           clearInterval(myInterval);
            $(canvas).fadeOut();
            $('.dg').css('background-color', 'black')
@@ -368,4 +378,46 @@ c.drawImage(imageObj, this.x, this.y, 100,100);
      
 
     }
+}
+
+
+
+/* donut */
+function bigFig(){
+  var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight-1, 0.1, 1000 );
+
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+
+
+var geometry = new THREE.TorusGeometry( 4, 2, 200, 100 );
+var material = new THREE.MeshNormalMaterial( { color: 0x00ff00} );
+
+
+var pointLight =
+  new THREE.PointLight(0xFFFFFF);
+
+// set its position
+pointLight.position.x = 1;
+pointLight.position.y = 50;
+pointLight.position.z = 130;
+
+// add to the scene
+scene.add(pointLight);
+var doughnut = new THREE.Mesh( geometry, material );
+scene.add( doughnut );
+
+camera.position.z = 5;
+
+
+function render() {
+  requestAnimationFrame( render );
+  doughnut.rotation.x += 0.01;
+  doughnut.rotation.y += 0.01;
+  renderer.render( scene, camera );
+}
+render();
 }
