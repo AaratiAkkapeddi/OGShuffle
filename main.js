@@ -145,7 +145,7 @@ function serve(arr, index){
 	    });
 
 	    $('body').keyup(function(e){
-		   if(e.keyCode == 32){
+		   if(e.keyCode == 40){
         var item = audioArray[Math.floor(Math.random()*audioArray.length)];
         item.play();
 		       // user has pressed space
